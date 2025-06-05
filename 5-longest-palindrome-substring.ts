@@ -9,8 +9,8 @@ function longestPalindrome(s: string): string {
 	}
 
 	for (let i = 0; i < strlen - 1; i++) {
-		if (s[i] === s[i+1]) {
-			grid[i][i+1] = true;
+		if (s[i] === s[i + 1]) {
+			grid[i][i + 1] = true;
 			maxlength = 2;
 			startIndex = i;
 			endIndex = i+1;
