@@ -16,5 +16,3 @@ function convert(s: string, numRows: number): string {
 	}
 	return rows.join('');
 };
-
-console.log(convert('paypalishiring', 3))
