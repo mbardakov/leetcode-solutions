@@ -2,8 +2,8 @@ function myAtoi(s: string): number {
 	const numeric = '1234567890';
 	const INT_MAX_DIGITS = [2, 1, 4, 7, 4, 8, 3, 6, 4, 7];
 	const INT_MIN_DIGITS = [2, 1, 4, 7, 4, 8, 3, 6, 4, 8];
-	const INT_MAX = Math.pow(2, 31) - 1;
-	const INT_MIN = Math.pow(2, 31) * -1;
+	const INT_MAX = 2147483647;
+	const INT_MIN = -2147483648;
 	let index: number = 0;
 	let positive: boolean = true;
 	let digits: number[] = [];

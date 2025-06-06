@@ -1,12 +1,10 @@
 function reverse(x: number): number {
-	const INT_MAX = Math.pow(2, 31) - 1;
-	const INT_MIN = Math.pow(2, 31) * -1;
-	const INT_MAX_DIGITS = numToDigits(INT_MAX);
-	const INT_MIN_DIGITS = numToDigits(Math.abs(INT_MIN));
+	const INT_MAX_DIGITS = [2, 1, 4, 7, 4, 8, 3, 6, 4, 7];
+	const INT_MIN_DIGITS = [2, 1, 4, 7, 4, 8, 3, 6, 4, 8];
 	
 	const isNegative: boolean = x < 0;
 	x = Math.abs(x);
-	const digitsReverse = numToDigits(x).reverse();
+	const digitsReverse = numToDigits(x);
 
 	if (!isNegative && digitsGreaterThan(digitsReverse, INT_MAX_DIGITS)) {
 		return 0;
@@ -25,7 +23,7 @@ let digits: number[] = [];
 		digits.push(num % 10);
 		num = Math.floor(num / 10);
 	}
-	return digits.reverse();
+	return digits;
 }
 
 function digitsToNum(digits: number[]): number {
