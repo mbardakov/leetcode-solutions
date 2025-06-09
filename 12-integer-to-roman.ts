@@ -3,7 +3,7 @@ function intToRoman(num: number): string {
 		symbol: string,
 		value: number
 	};
-	
+
 	const numerals: numeral[] = [
 		{ symbol: 'M', value: 1000 },
 		{ symbol: 'D', value: 500 },
@@ -22,27 +22,24 @@ function intToRoman(num: number): string {
 		{ symbol: 'IX', value: 9 },
 		{ symbol: 'IV', value: 4 },
 	];
-	
-	const firstDigit = getFirstDigit(num);
-	if (firstDigit === 4 || firstDigit === 9) {
-		for (let roman of subtractiveForms) {
+
+	let result = '';
+	while (num > 0) {
+		const firstDigit = getFirstDigit(num);
+		for (let roman of ((firstDigit === 4 || firstDigit === 9) ? subtractiveForms : numerals)) {
 			if (roman.value <= num) {
-				return roman.symbol + intToRoman(num - roman.value);
-			}
-		}
-	} else {
-		for (let roman of numerals) {
-			if (roman.value <= num) {
-				return roman.symbol + intToRoman(num - roman.value);
+				result += roman.symbol;
+				num = num - roman.value;
+				break;
 			}
 		}
 	}
-	return ''
+	return result;
 };
 
 function getFirstDigit(num: number): number {
 	while (num > 10) {
-		num = Math.floor(num/10);
+		num = Math.floor(num / 10);
 	}
 	return num;
 }
