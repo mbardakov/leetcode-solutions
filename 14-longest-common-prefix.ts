@@ -1,3 +1,5 @@
+import { runTest } from "./util/runTest";
+
 function longestCommonPrefix(strs: string[]): string {
 	const minLength = Math.min(...strs.map(str => str.length));
 	let prefix = '';
@@ -13,7 +15,7 @@ function longestCommonPrefix(strs: string[]): string {
 	return prefix;
 };
 
-console.assert(longestCommonPrefix(['flow', 'flower', 'flight']) === 'fl', 'flow flower flight');
-console.assert(longestCommonPrefix(['flow', 'flower']) === 'flow', 'flow flower');
-console.assert(longestCommonPrefix(['flow', 'cower']) === '', 'flow cower');
-console.assert(longestCommonPrefix(['flow']) === 'flow', 'flow');
+runTest(longestCommonPrefix(['flow', 'flower', 'flight']), 'fl');
+runTest(longestCommonPrefix(['flow', 'flower']), 'flow');
+runTest(longestCommonPrefix(['flow', 'cower']), '');
+runTest(longestCommonPrefix(['flow']), 'flow');

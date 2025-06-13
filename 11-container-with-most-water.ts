@@ -1,3 +1,5 @@
+import { runTest } from "./util/runTest";
+
 function maxArea(height: number[]): number {
 	let maxArea = 0;
 	let left = 0;
@@ -15,4 +17,4 @@ function maxArea(height: number[]): number {
 	return maxArea;
 };
 
-console.assert(maxArea([1,8,6,2,5,4,8,3,7]) === 49, 'test 1 failed');
+runTest(maxArea([1,8,6,2,5,4,8,3,7]), 49);

@@ -1,3 +1,5 @@
+import { runTest } from "./util/runTest";
+
 function romanToInt(s: string): number {
 	interface numeral {
 		symbol: string,
@@ -30,7 +32,7 @@ function romanToInt(s: string): number {
 	return result;
 };
 
-console.assert(romanToInt('I') === 1, `Expected 1, got ${romanToInt('I')}`);
-console.assert(romanToInt('IV') === 4, `Expected 4, got ${romanToInt('IV')}`);
-console.assert(romanToInt('V') === 5, `Expected 5, got ${romanToInt('V')}`);
-console.assert(romanToInt('LVIII') === 58, `Expected 58, got ${romanToInt('LVIII')}`);
+runTest(romanToInt('I'), 1);
+runTest(romanToInt('IV'), 4);
+runTest(romanToInt('V'), 5);
+runTest(romanToInt('LVIII'), 58);

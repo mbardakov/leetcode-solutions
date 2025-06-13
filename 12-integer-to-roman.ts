@@ -1,3 +1,5 @@
+import { runTest } from "./util/runTest";
+
 function intToRoman(num: number): string {
 	interface numeral {
 		symbol: string,
@@ -44,22 +46,22 @@ function getFirstDigit(num: number): number {
 	return num;
 }
 
-console.assert(intToRoman(1) === 'I', '1')
-console.assert(intToRoman(2) === 'II', '2')
-console.assert(intToRoman(3) === 'III', '3')
-console.assert(intToRoman(4) === 'IV', '4')
-console.assert(intToRoman(5) === 'V', '5')
-console.assert(intToRoman(7) === 'VII', '6')
-console.assert(intToRoman(8) === 'VIII', '7')
-console.assert(intToRoman(9) === 'IX', '9')
-console.assert(intToRoman(10) === 'X', '10')
-console.assert(intToRoman(14) === 'XIV', '14')
-console.assert(intToRoman(20) === 'XX', '20')
-console.assert(intToRoman(40) === 'XL', '40')
-console.assert(intToRoman(44) === 'XLIV', '44')
-console.assert(intToRoman(49) === 'XLIX', '49')
-console.assert(intToRoman(50) === 'L', '50')
-console.assert(intToRoman(51) === 'LI', '51')
+runTest(intToRoman(1), 'I')
+runTest(intToRoman(2), 'II')
+runTest(intToRoman(3), 'III')
+runTest(intToRoman(4), 'IV')
+runTest(intToRoman(5), 'V')
+runTest(intToRoman(7), 'VII')
+runTest(intToRoman(8), 'VIII')
+runTest(intToRoman(9), 'IX')
+runTest(intToRoman(10), 'X')
+runTest(intToRoman(14), 'XIV')
+runTest(intToRoman(20), 'XX')
+runTest(intToRoman(40), 'XL')
+runTest(intToRoman(44), 'XLIV')
+runTest(intToRoman(49), 'XLIX')
+runTest(intToRoman(50), 'L')
+runTest(intToRoman(51), 'LI')
 
 
 // If the value does not start with 4 or 9, 
