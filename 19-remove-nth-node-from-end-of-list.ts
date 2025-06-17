@@ -9,7 +9,6 @@ class ListNode {
 	}
 }
 
-
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
 	const length = getLength(head);
 	if (length === n) {
